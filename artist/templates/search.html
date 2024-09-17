@@ -1,0 +1,46 @@
+{%  extends 'base.html' %}
+
+{%  block content %}
+
+    {% load static %}
+
+     <!--==================== SEARCH ====================-->
+     <div class="input-container">
+         <form action="" method="POST" >
+
+            {% csrf_token %}
+            <input type="text"  class="input" placeholder="Search for Music" name='search' id='search' >
+            <span class="icon"> 
+
+               <button class="button" type="submit"><i class="ri-search-2-line"></i></button>
+
+            </span>
+            {{ form.as_p }}
+
+      </form>
+     </div>
+
+         
+ {% if searched %}
+        <div class="featured__music grid">
+            {% for music in searched %}
+
+            <article class="music__content__2">
+                <img src="{{ music.song_image.url }}" alt="" class="image__cover"> <br>
+                        <p>{{ music.song_title }}</p>
+                <a  class="video" href="{% url 'listen' music.id %}">LISTEN NOW</a>
+            </article>
+
+            {% endfor %}
+        </div>
+            
+
+{% else %}
+
+        <center>
+                <h2>Song or Artiste not found</h2>
+        </center>
+
+{% endif %}
+
+{%  endblock %}

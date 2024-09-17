@@ -1,0 +1,242 @@
+ {% extends 'base.html' %} 
+
+{% load static %} 
+
+ {% block content %}
+  
+  
+  <!--  ================MAIN============ -->
+  <main>
+    <!-- ============HOMEPAGE============== -->
+    <section class="home grid" id="home">
+            <div class="home__content grid">
+                <article class="content__1">
+                        <h1 class="home__title">Experience the Magic Of Music</h1>
+                        <p class="description">
+                        <br>  Discover the captivating tunes of Melodic Beats and Connect <br>  with enchanting Melodies
+                        </p>
+                    
+                    <div class="buttons__container">
+                        <button class="button-1">Join Now</button>
+                        <button class="button-2">Listen Now</button>
+                    </div>
+
+                    <div class="listeners__container">
+                        <aricle class="section-1">
+                            <h2 class="section-1__title">500K+</h2>
+                            <P>listeners</P>
+                        </aricle>
+
+                        <aricle class="section-1">
+                            <h2 class="section-1__title">50K+</h2>
+                            <P>Albums Sold</P>
+                        </aricle>
+
+                        <aricle class="section-1">
+                            <h2 class="section-1__title">4.8</h2>
+                            <P>Rating</P>
+                        </aricle>
+                    </div>
+
+                </article>
+                   
+                <article class="content__2">
+                    <img src="{% static '/images/Kwesi Arthiur 5.png' %}" alt="" class="home__img">
+                </article>
+        </div>
+
+       
+          
+    </section>
+
+   <!-- ===============NEW MUSIC================= -->
+    
+   {%  for release in releases %}
+    <section class="music">
+       
+        <h1 class="Artist">{{ release.artist_name }}</h1>
+            <div class="music__container grid">
+                <div class="music__content">
+                    <video src="{{ release.song_video.url }}" autoplay muted class="music__video"></video>
+                </div>
+                     
+                <div class="music__description grid">
+                    <div class="description__1">
+                        <h3 class="video">THE NEW VIDEO</h3>
+                        <h2 class="music__title">{{ release.song_title }}</h2>
+                        <h3>FEAT IDK   <span><a href="https://youtu.be/QXNtH_NOSuo?si=3RMzJhXxsWFkyvZZ" target="_blank">Watch Now</a></span></h3>
+                        
+                    </div>
+
+                    <div class="description__2">
+                        <h3 class="video">THE NEW ALBUM</h3>
+                        <h2 class="music__title">{{ release.album_title }}</h2>
+                        <h3>OUT NOW</h3>
+                    </div>
+                  
+                </div>
+            </div>
+    </section>
+    
+
+    <!-- ===================MUSIC================= -->
+    <section class="music" id="music">
+        <h1 class="album__note ">RECENT ALBUM & MUSIC</h1>
+        <div class="img__container">
+            <figure>
+                <img src="{{ release.song_image.url }}" alt="" class="album__art">
+                <div class="bottom__text">
+                    <h2 class="video">THE NEW ALBUM</h2>
+                    <h2 class="video">{{ release.album_title }}</h2>
+                    <a  class="video" href="listen.html">LISTEN NOW</a>
+                    
+                </div>
+            </figure>
+        </div>
+     {% endfor %}
+        
+            <div class="featured__music grid">
+                {% for music in musics %}
+
+                <article class="music__content__2">
+                    <img src="{{ music.song_image.url }}" alt="" class="image__cover"> <br>
+                            <p style=" text-align: center;">{{ music.song_title }}</p>
+                    <a  class="video" href="{% url 'listen' music.id %}" style="text-align: center; padding-left: 2rem;">LISTEN NOW</a>
+                </article>
+
+                {% endfor %}
+            </div>
+        
+    </section>
+
+   <!-- ================TOUR DATES=================== -->
+   <section class="tour__dates" id="tours">
+        <h2 class="section-title album__note">TOURS</h2>
+        <div class="tour__img">
+            <img src="{% static '/images/On stage Kwesi arthur.jpeg' %}" alt="" class="tour__img">
+        </div>
+        <div class="tour__container">
+            <div class="tour__content">
+                <button class="tour__button">United States</button>
+                <hr>
+                <div class="tour__box">
+                    <p class="tour__date">Friday, 12th</p>
+                    <p class="tour__venue">Chicago</p>
+                    <button class="tickets__link"><a href=""  class="tickets__link">Get Tickets</a></button>
+                </div>
+
+            </div>
+            <div class="tour__content">
+                <button class="tour__button">Netherlands</button>
+                <hr>
+                <div class="tour__box">
+                    <p class="tour__date">Friday, 12th</p>
+                    <p class="tour__venue">Amsterdam</p>
+                    <button class="tickets__link"><a href="" class="tickets__link">Get Tickets</a></button>
+                </div>
+
+            </div>
+            <div class="tour__content">
+                <button class="tour__button">Ghana</button>
+                <hr>
+                <div class="tour__box">
+                    <p class="tour__date">Friday, 12th</p>
+                    <p class="tour__venue">Tema</p>
+                    <button class="tickets__link"><a href="" class="tickets__link">Get Tickets</a></button>
+                </div>
+
+            </div>
+            <div class="tour__content">
+                <button class="tour__button">South Africa</button>
+                <hr>
+                <div class="tour__box">
+                    <p class="tour__date">Friday, 12th</p>
+                    <p class="tour__venue">Cape Town</p>
+                    <button class="tickets__link"><a href="" class="tickets__link">Get Tickets</a></button>
+                </div>
+
+            </div>
+        </div>
+   </section>
+ 
+
+  <!--  ============ABOUT======================= -->
+  <section class="about" id="about">
+        <h2 class="section-title album__note">About Me</h2>
+    <div class="about__container grid">
+        <div class="image__container">
+            <img src="{% static  '/images/Kwesi Arthur 2.png' %}" alt="" class="about__img">
+        </div>
+
+        <div class="about__content">
+            <p class="description">
+                “My music describes my journey,” says Kwesi Arthur. Hailing from Tema a city on the
+                West African Coast, his work chronicles his environment. “I feel like my music is a journal sometimes,” <br> <br>
+                he explains. “Everything I feel, everything I go through, everything I see, I express it through the music.”
+                It’s his lyrical talent and soaring <br> ambition that makes him particularly great, because it’s not just music he’s making,
+                it’s hope. Since he first burst on the scene with his 2017 hit single “Grind Day,” he’s rapidly risen to become one
+                of the brightest stars in Ghana’s burgeoning music scene <br> <br> where the rapper and singer occupies an inimitable space. 
+               “With my art, however I can get my feelings across, I’m gonna express it, whether it’s through rap or melodies.” <br> <br>
+                Sonically Arthur’s music knows no limits – <span style="font-weight: bolder; font-size: 1.2rem;">his blend of Highlife, Afrobeats, R&B and staunch Hip-hop</span>  makes him 
+               the perfect microcosm of contemporary Ghanaian music. And the world is paying attention. Hits like “Baajo,”  <br>
+               “Live from 233,” and “Celebrate” and collaborations with music’s elite Sarkodie, Vic Mensa, Stormzy, Mr Eazi, Nasty C,
+                and more, have garnered him international recognition and accolades
+            </p>
+        </div>
+    </div>
+
+    
+  </section>
+
+  <!--  ===================CONTACT-US==================== -->
+  <section class="newsletter section" id="newsletter">
+    <div class="newsletter__contianer bd-grid">
+        <div>
+            <h3 class="newsletter__title">Sucbscribe to  <br>Join my Community</h3>
+            <p class="newsletter__description">Get 10% discount for all Products on Arrival</p>
+        </div>
+
+       <!--  ==================SUBSCRIPTION FORM=============== -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="newsletter__subscribe" id="subscribe_form">
+
+           <!--  =============POWERED BY WEB 3 FROMS============== -->
+           <input type="hidden" name="apikey" value="c93ec908-27eb-4c52-a4ab-d409f0d01983">
+
+            <input type="text" class="newsletter__inpt" placeholder="@join our mailing list" id="input-form" name="Email to be Part of Community">
+            <button class="button__input"  type="submit">Submit</button>
+
+        </form>
+        <span id="bottom_text_1"></span>
+    </div>
+
+</section>
+  <!--  ==============FOOTER========================= -->
+  
+   <section class="footer" id="footer">
+    <p class="descrition" >&copy;Tieme Music Publications | Sisi | Privacy And Policy</p> <br>
+    <p class="copyright">DEV BY AJ-GRAPHICS & WEB DEVELOPMENT</p>
+   </section>
+</main>
+
+
+<script>
+  document.getElementById('subscribe_form').addEventListener('submit', (e) => {
+    const inputForm = document.getElementById('input-form').value;
+    const msg = document.getElementById('bottom_text_1');
+
+    // Simple email validation pattern
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(inputForm)) {
+        // Create an alert to the user
+        msg.innerHTML = 'Enter a valid email address';
+
+        // Prevent form from submission
+        e.preventDefault();
+    }
+});
+
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+   <!--  ================MAIN============ -->
+   <main>
+    <!-- ============HOMEPAGE============== -->
+    <div class="listen" id="listen">
+
+
+        <article class="artist__img-cover">
+            <img src="{{ musics.song_image.url }}" alt="artist__img" class="artist__img">
+            <h3>{{ musics.artist_name   }}</h3> <br>
+            <h3>{{ musics.song_title }}</h3>
+            <p class="music__platform">Choose your music service</p>
+        </article>
+        
+        <div class="listen__container grid">
+            <article class="listen__content">
+                <img src="{% static 'images/spotify.png' %}" alt="" class="listen__image">
+                <button class="play__buttton"><a href="https://open.spotify.com/album/6LyLd9gp7xoOKaFtPxI7PI?si=veym9_YhQh63T1XVmD9UTg" target="_blank"  class="play__link">Play</a></button>
+                <hr>
+            </article>
+
+            <article class="listen__content">
+                <img src="{% static '/images/soundcloud.jpg' %}" alt="" class="listen__image">
+                <button class="play__buttton"><a href="https://soundcloud.com/kwesiarthur/sets/this-is-not-the-tape-iii?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" class="play__link">Play</a></button>
+                <hr>
+            </article>
+
+            <article class="listen__content">
+                <img src="{% static 'images/apple music.png' %}" alt="" class="listen__image">
+                <button class="play__buttton"><a href="https://music.apple.com/us/album/this-is-not-the-tape-iii/1734875442"target="_blank"  class="play__link">Play</a></button>
+                <hr>
+            </article>
+
+            <article class="listen__content">
+                <img src="{% static 'images/audiomack.jpeg' %}" alt="" class="listen__image">
+                <button class="play__buttton"><a href="https://audiomack.com/kwesi-arthur/album/this-is-not-the-tape-iii" target="_blank" class="play__link">Play</a></button>
+                <hr>
+            </article>
+
+            <article class="listen__content">
+                <img src="{% static 'images/TIDAL.png' %}" alt="" class="listen__image">
+                <button class="play__buttton"><a href="https://tidal.com/browse/album/349421264"target="_blank"  class="play__link">Play</a></button>
+                <hr>
+            </article>
+
+            <article class="listen__content">
+                <img src="{% static 'images/itunes store.png' %}" alt="" class="listen__image">
+                <button class="play__buttton"><a href="https://music.apple.com/us/album/this-is-not-the-tape-iii/1734875442"target="_blank"  class="play__link">Play</a></button>
+                <hr>
+            </article>
+
+            <article class="listen__content">
+                <img src="{% static  'images/youtube.jpeg' %}" alt="" class="listen__image">
+                <button class="play__buttton"><a href="https://youtube.com/@kwesiarthur_?si=caiBREGtIfOVkMQm" target="_blank" class="play__link">Play</a></button>
+                <hr>
+            </article>
+            
+        </div>
+    </div>
+
+</main>
+
+
+{% endblock %}

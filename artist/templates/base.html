@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ===============REMIX ICONS============== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ===============SWIPER CSS=================== -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- =================CSS============================= -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Artist Website</title>
+</head>
+<body>  
+    
+    {% include 'navbar.html' %}
+
+    {% block content %}
+
+
+    {% endblock %}
+
+
+<!--  ==================swiper JS=============== -->
+<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+
+<!--  ==================js========================== -->
+
+ <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

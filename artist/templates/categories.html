@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+
+{% load static %} 
+
+ {% block content %}
+
+
+ <br><br><br><br><br><br><br><br><br>
+  
+  <!--  ================MAIN============ -->
+        
+            <div class="featured__music grid">
+                {% for music in musics %}
+
+                <article class="music__content__2">
+                    <img src="{{ music.song_image.url }}" alt="" class="image__cover"> <br>
+                            <p>{{ music.song_title }}</p>
+                    <a  class="video" href="{% url 'listen' music.id %}">LISTEN NOW</a>
+                </article>
+
+                {% endfor %}
+            </div>
+        
+
+
+   
+
+
+
+
+{% endblock %}

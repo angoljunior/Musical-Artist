@@ -1,0 +1,79 @@
+
+<!-- =============HEADER=============== -->
+<header class="header" id="header">
+    <nav class="nav ">
+        <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-grid-fill" id="nav-toggle"></i>
+        </div>
+
+        <a href="" class="nav__logo">Artist website</a>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="{% url 'home' %}" class="nav__link ">Home</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#music" class="nav__link">Albums</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#tours" class="nav__link">Tours</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">About</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="{% url 'search' %}" class="nav__link">search</a>
+                </li>
+
+              <!--   ============DROPDWON=========== --> 
+                <div class="menu nav__item">
+                <div class="item">
+                    <a href="#" class="link">
+                    <span class="nav__link" >Albums</span>
+                    <svg viewBox="0 0 360 360" xml:space="preserve">
+                        <g id="SVGRepo_iconCarrier">
+                        <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                        ></path>
+                        </g>
+                    </svg>
+                    </a>
+                    <div class="submenu">
+                    <div class="submenu-item">
+                        <a href="{% url 'category' 'THIS IS NOT MY TAPe' %}" class="submenu-link nav__link"> THIS IS NOT THE TAPE </a>
+                    </div>
+                    <div class="submenu-item">
+                        <a href="{% url 'category' 'SON OF JACOB' %}" class="submenu-link nav__link"> SON OF JACOB </a>
+                    </div>
+
+                    <div class="submenu-item">
+                        <a href="{% url 'category' 'SINGLE' %}" class="submenu-link nav__link">SINGLES</a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+
+            </ul>
+
+            <div class="nav__icons">
+                <a href="https://youtube.com/@kwesiarthur_?si=CfuAUzebdoE_AzCx"><i class="ri-apple-fill"></i></a>
+                <a href=""><i class="ri-instagram-fill"></i></a>
+                <a href=""><i class="ri-spotify-fill"></i></a>
+                <a href=""><i class="ri-soundcloud-fill"></i></a>
+                <a href=""><i class="ri-youtube-fill"></i></a>
+            </div>
+        </div>
+
+    <div class="nav__shop">
+        <i class="ri-shopping-bag-line nav__shop"></i>
+    </div>                
+    </nav>
+</header>
+
