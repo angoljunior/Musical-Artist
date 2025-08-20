@@ -23,6 +23,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']  # Allow all hosts for development; adjust in production
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://musical-artist-production.up.railway.app",
+    # "https://www.yourcustomdomain.com",   # if you add a custom domain later
+]
+
 
 # Application definition
 
