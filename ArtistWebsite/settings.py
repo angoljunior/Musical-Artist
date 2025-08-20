@@ -19,9 +19,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False  # Set to False in production; True for development
 
-ALLOWED_HOSTS = ['*']  # Allow all hosts for development; adjust in production
+ALLOWED_HOSTS = ['musical-artist-production.up.railway.app', '*']  # Allow all hosts for development; adjust in production
 
 CSRF_TRUSTED_ORIGINS = [
     "https://musical-artist-production.up.railway.app",
